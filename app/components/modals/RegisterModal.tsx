@@ -40,6 +40,7 @@ const RegisterModal = () => {
       .then((res) => {
         console.log(res);
         registerModal.close();
+        loginModal.open();
       })
       .catch((err) => {
         console.log(err);
@@ -51,6 +52,7 @@ const RegisterModal = () => {
   };
 
   const toggle = useCallback(() => {
+    toast.success('Account created successfully!');
     registerModal.close();
     loginModal.open();
   }, [loginModal, registerModal]);
